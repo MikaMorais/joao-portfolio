@@ -90,3 +90,4 @@ document.querySelectorAll('details').forEach(detail => {
         });
     });
 });
+    
