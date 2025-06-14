@@ -190,16 +190,7 @@ body.dark-theme {
   margin-bottom: 1rem;
 }
 
-.perfil {
-  width: 250px;
-  height: 250px;
-  background-color: var(--body-color);
-  border: 8px solid var(--first-color);
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  transition: background-color .4s;
-}
+
 
 .perfil__content {
   width: 180px;
@@ -215,9 +206,7 @@ body.dark-theme {
               hsl(var(--hue), 90%, 30%));
 }
 
-.perfil__img {
-  width: 150px;  
-}
+
 
 .main {
   overflow: hidden;
@@ -249,7 +238,7 @@ hr.divider {
 }
 
 .nav__logo {
-  color: var(--white-color);
+  color: var(--title-color);
   font-weight: var(--font-semi-bold);
   transition: color .4s;
 }
@@ -333,6 +322,7 @@ hr.divider {
   font-weight: var(--font-semi-bold);
   padding: 1rem 2rem;
   transition: background-color .4s, box-shadow .4s;
+  border-radius: 10px;
 }
 
 .button:hover {
@@ -347,17 +337,27 @@ hr.divider {
 }
 
 .home__rectangle {
-  width: 100%;
-  height: 220px;
-  background-color: var(--first-color);
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 700px;
+  height: 340px;
+  background-color: var(--first-color);
+  border-radius: 30px;
+  z-index: 0;
+  box-shadow: 0 8px 32px var(--shadow-color);
 }
 
 .home__container {
-  padding-block: 1rem 3rem;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 340px;
 }
 
 .home__perfil {
@@ -641,13 +641,9 @@ hr.divider {
 }
 
 
-.services__title {
-  font-size: var(--h2-font-size);
-  margin-bottom: 1rem;
-}
 
 .services__description {
-  margin-bottom: 3rem;
+  margin-bottom: 1.4rem;
 }
 
 .services__button {
@@ -697,12 +693,10 @@ hr.divider {
 
 .services__modal-item {
   text-align: initial;
-  list-style: disc;
+  list-style-type: none;
+
 }
 
-.services__modal-item::marker {
-  color: var(--first-color);
-}
 
 .services__modal-close {
   position: absolute;
@@ -973,6 +967,15 @@ hr.divider {
   font-size: 1rem;
   transition: .4s;
 } 
+
+.footer__contact {
+  color: var(--title-color);
+  text-align: center;
+}
+
+.footer__contact p {
+  font-weight: bolder;   
+}
 
 /*=============== FAQ  ===============*/
 .faq {
@@ -1328,8 +1331,14 @@ details[open] .control-icon-expand {
   }
 
   .home__rectangle {
-    width: 30vw;
-    height: 100%;
+    width: 100%;
+    height: 180px;
+    background-color: var(--first-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 0 0 40px 40px;
   }
 
   .home__container {
