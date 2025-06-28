@@ -273,6 +273,10 @@ body.dark-theme {
   .bg-header .nav__menu .nav__logo {
     color: var(--white-color) !important;
   }
+
+   .home__social {
+    justify-content: center;
+  }
 }
 
 .nav__list {
