@@ -19,7 +19,7 @@
       -> Copy the color mode (HSL)
   */
   --hue: 255;
-  --first-color: #6495ed;
+  --first-color: #1357d0;
   --first-color-alt: hsl(var(--hue), 82%, 56%);
   --first-color-light: hsl(var(--hue), 40%, 80%);
   --title-color: hsl(var(--hue), 24%, 16%);
@@ -330,6 +330,10 @@ body.dark-theme {
   position: relative;
   background: var(--first-color); /* cor suave de fundo apenas para a home section */
   box-shadow: 0 8px 24px hsla(var(--hue), 90%, 30%, .3);
+  background-image: url(../img/home_background.jpg);
+  background-size: cover;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
 }
 
 .home__rectangle {
@@ -393,6 +397,7 @@ body.dark-theme {
   color: var(--white-color);
   line-height: 1.5;
   text-align: left;
+  font-weight: var(--font-semi-bold);
 }
 
 .home__name {
@@ -401,10 +406,14 @@ body.dark-theme {
 
 .home__profession {
   font-size: var(--h2-font-size);
+  color: var(--white-color);
 }
 
 .home__title {
   justify-content: start;
+  font-family: "Great Vibes", cursive;
+  font-size: var(--h1-font-size);
+  color: var(--white-color);
 }
 
 .home__social {
@@ -413,15 +422,11 @@ body.dark-theme {
 }
 
 .home__social-link {
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: var(--white-color);
   transition: color .4s;
   border-radius: 40px;
   background-color: darkblue;
-}
-
-.home__social-link i {
-  font-size: 1.5rem;
 }
 
 .home__intro {
@@ -936,6 +941,12 @@ body.dark-theme {
   justify-self: center;
 }
 
+.contact__email {
+  font-size: var(--small-font-size);
+  
+  margin-bottom: .5rem;
+}
+
 .contact__card-title {
   font-weight: var(--font-medium);
 }
@@ -980,6 +991,7 @@ body.dark-theme {
 /*=============== FAQ  ===============*/
 .faq {
   padding-bottom: 4rem;  
+  box-shadow: 0 12px 24px var(--shadow-color);
 }
 
 .faq__title {
@@ -1010,6 +1022,7 @@ details {
  border-radius: 15px;
  box-sizing: border-box;
  transition: all .3s;
+ box-shadow: 0 6px 6px var(--shadow-color);
 }
 
 details + details {
@@ -1084,6 +1097,7 @@ details[open] .control-icon-expand {
   transition: color .4s;
   border-radius: 40px;
   text-align: center;
+  box-shadow: 0 12px 24px var(--shadow-color);
 }
 
 
@@ -1358,7 +1372,7 @@ details[open] .control-icon-expand {
   }
 
   .home__profession {
-    color: var(--first-color);
+    color: var(--white-color);
   }
 
   .home__content {
