@@ -190,8 +190,6 @@ body.dark-theme {
   margin-bottom: 1rem;
 }
 
-
-
 .perfil__content {
   width: 180px;
   height: 180px;
@@ -266,7 +264,15 @@ body.dark-theme {
     box-shadow: 0 12px 24px var(--shadow-color);
     padding-block: 5rem 4rem;
   }
-  
+
+  .nav__menu .nav__link,
+  .nav__menu .nav__logo {
+    color: var(--white-color) !important;
+  }
+  .bg-header .nav__menu .nav__link,
+  .bg-header .nav__menu .nav__logo {
+    color: var(--white-color) !important;
+  }
 }
 
 .nav__list {
@@ -277,7 +283,7 @@ body.dark-theme {
 }
 
 .nav__link {
-  color: var(--title-color);
+  color: var(--white-color);
   font-weight: var(--font-semi-bold);
   transition: color .4s;
 }
@@ -307,7 +313,21 @@ body.dark-theme {
   color: var(--title-color);
 }
 
+.bg-header .nav__link {
+  color: var(--title-color) !important;
+}
 
+.header:not(.bg-header) .nav__link {
+  color: var(--white-color) !important;
+}
+
+.bg-header .nav__logo {
+  color: var(--title-color) !important;
+}
+
+.header:not(.bg-header) .nav__logo {
+  color: var(--white-color) !important;
+}
 
 /*=============== BUTTON ===============*/
 .button {
@@ -1190,6 +1210,7 @@ details[open] .control-icon-expand {
   bottom: -50%;
   background-color: var(--container-color);
   box-shadow: 0 12px 24px var(--shadow-color);
+  border-radius: 10px;
   display: inline-flex;
   padding: 6px;
   font-size: 1.24rem;
