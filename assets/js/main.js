@@ -1,3 +1,15 @@
+/*=============== FAQ OPEN ONE ===============*/ 
+document.querySelectorAll('details').forEach(detail => {
+    detail.addEventListener('click', function() {
+        // Fecha todos os outros details, exceto o que foi clicado
+        document.querySelectorAll('details').forEach(otherDetail => {
+            if (otherDetail !== this) {
+                otherDetail.removeAttribute('open');
+            }
+        });
+    });
+});
+
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById('nav-menu'),
         navToggle = document.getElementById('nav-toggle'),
@@ -79,15 +91,6 @@ themeButton.addEventListener('click', () => {
 })
 
 
-/*=============== FAQ OPEN ONE ===============*/ 
-document.querySelectorAll('details').forEach(detail => {
-    detail.addEventListener('click', function() {
-        // Fecha todos os outros details, exceto o que foi clicado
-        document.querySelectorAll('details').forEach(otherDetail => {
-            if (otherDetail !== this) {
-                otherDetail.removeAttribute('open');
-            }
-        });
-    });
-});
+
+
     

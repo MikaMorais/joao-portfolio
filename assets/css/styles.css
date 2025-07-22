@@ -1,5 +1,8 @@
 /*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/*
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+*/
 
 /*=============== VARIABLES CSS ===============*/
 :root {
@@ -32,11 +35,13 @@
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
-  --body-font: "Syne", sans-serif;
+  --body-font: "Roboto", sans-serif;
+  --title-font: "Quicksand", sans-serif;
   --biggest-font-size: 2rem;
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
+  --h4-font-size: 1rem;
   --normal-font-size: .938rem;
   --small-font-size: .813rem;
   --smaller-font-size: .75rem;
@@ -141,8 +146,8 @@ body.dark-theme {
 }
 
 /*========== 
-	Color changes in some parts of 
-	the website, in dark theme
+  Color changes in some parts of 
+  the website, in dark theme
 ==========*/
 .dark-theme .bg-header {
   box-shadow: 0 12px 24px var(--shadow-color);
@@ -186,6 +191,7 @@ body.dark-theme {
 }
 .section__title {
   font-size: var(--h1-font-size);
+  font-family: var(--title-font);
   text-align: center;
   margin-bottom: 1rem;
 }
@@ -193,23 +199,18 @@ body.dark-theme {
 .perfil__content {
   width: 180px;
   height: 180px;
-  
   border-radius: 50%;
-  overflow: hidden;
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  background: linear-gradient(180deg,
-              hsl(var(--hue), 90%, 80%),
-              hsl(var(--hue), 90%, 30%));
+  
 }
-
-
 
 .main {
   overflow: hidden;
 }
 
+ b {
+  color: var(--first-color);
+}
 /*=============== HEADER & NAV ===============*/
 .header {
   position: fixed;
@@ -228,12 +229,25 @@ body.dark-theme {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: var(--title-font);
 }
+
 
 .nav__logo {
   color: var(--title-color);
   font-weight: var(--font-semi-bold);
   transition: color .4s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo__img {
+  height: 2.2rem;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .nav__toggle,
@@ -433,10 +447,15 @@ body.dark-theme {
   color: var(--white-color);
 }
 
+.home__profession__psi {
+  font-size: var(--h1-font-size);
+  color: var(--white-color);
+}
+
 .home__title {
   justify-content: start;
-  font-family: "Great Vibes", cursive;
-  font-size: var(--h1-font-size);
+  font-family: var(--title-font);
+  font-size: var(--h2-font-size);
   color: var(--white-color);
 }
 
@@ -567,6 +586,7 @@ body.dark-theme {
 
 .about__content {
   row-gap: 1rem;
+  margin-top: 40px;
 }
 
 .about__data {
@@ -581,6 +601,17 @@ body.dark-theme {
 .about__profession {
   font-size: var(--h2-font-size);
 }
+
+.about__profession__subtitle {
+  font-size: var(--h3-font-size);
+}
+
+.about__profession__sub-subtitle {
+  font-size: var(--h4-font-size);
+  text-align: center;
+  margin-top: -10px;
+}
+
 
 
 .about__modal-list {
@@ -669,7 +700,14 @@ body.dark-theme {
   margin-bottom: 1.5rem;
 }
 
+.services__title {
+  font-family: var(--title-font);
+}
 
+
+.services__title, b {
+  color: var(--first-color);
+}
 
 .services__description {
   margin-bottom: 1.4rem;
@@ -1010,12 +1048,12 @@ body.dark-theme {
 
 .footer__contact p {
   font-weight: bolder;   
+  margin-top: 20px;
 }
 
 /*=============== FAQ  ===============*/
 .faq {
   padding-bottom: 4rem;  
-  box-shadow: 0 12px 24px var(--shadow-color);
 }
 
 .faq__title {
@@ -1097,7 +1135,7 @@ summary::-webkit-details-marker {
 }
 
 .control-icon {
- fill: rebeccapurple;
+ fill: var(--first-color);
  transition: .3s ease;
  pointer-events: none;
 }
@@ -1145,10 +1183,14 @@ details[open] .control-icon-expand {
   color: var(--white-color);
 }
 
+
 .footer__logo {
   font-size: var(--h1-font-size);
   font-weight: var(--font-semi-bold);
   justify-self: center;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .footer__links,
@@ -1168,7 +1210,7 @@ details[open] .control-icon-expand {
 
 .footer__logo:hover,
 .footer__link:hover {
-  text-decoration: underline;
+  transform: translateY(-.25rem);
 }
 
 .footer__social {
@@ -1268,6 +1310,30 @@ details[open] .control-icon-expand {
     grid-template-columns: 400px;
     justify-content: center;
   }
+
+  .perfil__content {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .perfil__img {
+    max-width: 220px;
+    border-radius: 6%;
+    margin-top: 25px;
+  }
+
+  .about__profession, .about__profession__subtitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
 }
 
 @media screen and (min-width: 768px) {
@@ -1369,13 +1435,32 @@ details[open] .control-icon-expand {
 
   .perfil__content {
     width: 360px;
-    height: 360px;
+    height: 380px;
     border-width: 20px;
   }
 
   .perfil__img {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 5%;
+    display: block;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 24px var(--shadow-color);
+    transition: box-shadow 0.3s;
   }
+
+  .perfil__img:hover {
+    box-shadow: 0 8px 32px var(--shadow-color);
+  }
+@media screen and (max-width: 576px) {
+  .perfil__img {
+    max-width: 200px;
+    border-radius: 8%;
+  }
+}
 
   .home__rectangle {
     width: 100%;
